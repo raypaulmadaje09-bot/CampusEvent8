@@ -1,0 +1,137 @@
+import { CampusEvent } from '../types';
+import { addDays, formatISO } from 'date-fns';
+
+const now = new Date();
+
+export const mockEvents: CampusEvent[] = [
+  {
+    id: '1',
+    title: 'Spring Tech Symposium',
+    description: 'A deep dive into the latest in AI and Robotics. Featuring guest speakers from Silicon Valley and our own faculty.',
+    date: formatISO(addDays(now, 2)),
+    startTime: '10:00 AM',
+    endTime: '04:00 PM',
+    location: 'Main Auditorium',
+    category: 'Tech',
+    organizer: 'Engineering Student Council',
+    attendees: 150,
+    image: 'https://images.unsplash.com/photo-1540575861501-7ad0582373f3?auto=format&fit=crop&q=80&w=800',
+    isPopular: true,
+    isLive: true,
+    status: 'Approved'
+  },
+  {
+    id: '2',
+    title: 'Undergraduate Research Fair',
+    description: 'Students from all departments showcase their research projects. Poster presentations and networking opportunities.',
+    date: formatISO(addDays(now, 1)),
+    startTime: '01:00 PM',
+    endTime: '05:00 PM',
+    location: 'Science Center Plaza',
+    category: 'Academic',
+    organizer: 'Office of Undergraduate Research',
+    attendees: 85,
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    status: 'Approved'
+  },
+  {
+    id: '3',
+    title: 'Inter-College Basketball Finals',
+    description: 'The final showdown between the Lions and the Hawks. Come support your favorite team!',
+    date: formatISO(addDays(now, 3)),
+    startTime: '06:00 PM',
+    endTime: '09:00 PM',
+    location: 'North Gymnasium',
+    category: 'Sports',
+    organizer: 'Athletics Department',
+    attendees: 450,
+    image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=800',
+    isPopular: true,
+    status: 'Approved'
+  },
+  {
+    id: '4',
+    title: 'Modern Art Workshop',
+    description: 'Learn contemporary painting techniques from visiting artist Elena Rossi. No prior experience required.',
+    date: formatISO(addDays(now, 4)),
+    startTime: '02:00 PM',
+    endTime: '05:00 PM',
+    location: 'Fine Arts Studio 4',
+    category: 'Arts',
+    organizer: 'Arts Society',
+    attendees: 30,
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&q=80&w=800',
+    status: 'Approved'
+  },
+  {
+    id: '5',
+    title: 'Resume & LinkedIn Workshop',
+    description: 'Expert tips on how to make your profile stand out to recruiters in 2024.',
+    date: formatISO(addDays(now, 1)),
+    startTime: '11:00 AM',
+    endTime: '12:30 PM',
+    location: 'Career Center Room 102',
+    category: 'Career',
+    organizer: 'Career Services',
+    attendees: 65,
+    image: 'https://images.unsplash.com/photo-1517245318773-b7b83398274a?auto=format&fit=crop&q=80&w=800',
+    status: 'Approved'
+  },
+  {
+    id: '6',
+    title: 'Annual Charity Gala',
+    description: 'A night of music, food, and fundraising for local community projects. Formal attire suggested.',
+    date: formatISO(addDays(now, 5)),
+    startTime: '07:30 PM',
+    endTime: '11:00 PM',
+    location: 'Student Union Ballroom',
+    category: 'Social',
+    organizer: 'Student Government',
+    attendees: 200,
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800',
+    isPopular: true,
+    status: 'Approved'
+  },
+  {
+    id: '7',
+    title: 'Intro to Web Development',
+    description: 'A crash course on HTML, CSS, and React for beginners. Bring your own laptop.',
+    date: formatISO(addDays(now, 2)),
+    startTime: '04:00 PM',
+    endTime: '06:00 PM',
+    location: 'Computer Lab 3',
+    category: 'Workshops',
+    organizer: 'Coding Club',
+    attendees: 45,
+    image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=800',
+    status: 'Approved'
+  },
+  {
+    id: '8',
+    title: 'Sustainability Meetup',
+    description: 'Discussing eco-friendly initiatives for our campus and how you can get involved.',
+    date: formatISO(addDays(now, 0)),
+    startTime: '03:00 PM',
+    endTime: '04:30 PM',
+    location: 'Campus Garden',
+    category: 'Social',
+    organizer: 'Eco Warriors',
+    attendees: 25,
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?auto=format&fit=crop&q=80&w=800',
+    status: 'Approved'
+  },
+  {
+    id: '9',
+    title: 'Secret Hackathon (Pending)',
+    description: 'A midnight coding challenge for the bold. Needs approval.',
+    date: formatISO(addDays(now, 6)),
+    startTime: '10:00 PM',
+    endTime: '06:00 AM',
+    location: 'Hidden Basement Lab',
+    category: 'Tech',
+    organizer: 'Shadow Coders',
+    attendees: 10,
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800',
+    status: 'Pending'
+  }
+];
