@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
@@ -44,9 +44,11 @@ app.use(
    STATIC FILES
 ====================================================== */
 
-app.use(express.static(
-  path.join(__dirname, 'dist')
-));
+app.use(
+  express.static(
+    path.join(__dirname, 'dist')
+  )
+);
 
 /* ======================================================
    DATABASE CONNECTION
@@ -75,9 +77,11 @@ const authenticate = (req, res, next) => {
   const header = req.headers.authorization;
 
   if (!header) {
+
     return res.status(401).json({
       error: 'No token provided'
     });
+
   }
 
   const token = header.split(' ')[1];
@@ -225,6 +229,14 @@ app.post('/api/auth/login', async (req, res) => {
       email,
       password
     } = req.body;
+
+    if (!email || !password) {
+
+      return res.status(400).json({
+        error: 'Email and password required'
+      });
+
+    }
 
     const [rows] = await pool.query(
       'SELECT * FROM users WHERE email=?',
